@@ -4,7 +4,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,4 +15,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#number-grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  max-width: 80%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#number-grid-container > div {
+  background-color: white;
+  text-align: center;
+  font-size: 36px;
 }
