@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/maths-visualised/static/css/main.b1b64f73.css",
+    "main.js": "/maths-visualised/static/js/main.3a73869d.js",
+    "static/js/787.8cda67c3.chunk.js": "/maths-visualised/static/js/787.8cda67c3.chunk.js",
+    "index.html": "/maths-visualised/index.html",
+    "main.b1b64f73.css.map": "/maths-visualised/static/css/main.b1b64f73.css.map",
+    "main.3a73869d.js.map": "/maths-visualised/static/js/main.3a73869d.js.map",
+    "787.8cda67c3.chunk.js.map": "/maths-visualised/static/js/787.8cda67c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1b64f73.css",
+    "static/js/main.3a73869d.js"
+  ]
+}
