@@ -1,8 +1,3 @@
-import { element } from 'prop-types';
-import React from 'react';
-import { text } from 'stream/consumers';
-import { idText } from 'typescript';
-
 export const GenerateNumberGrid = (props: any) => {
 
   const arrayNum: Number[] = Array.from(Array(props.gridSize).keys()).map(x => x+1);
