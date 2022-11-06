@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useState, MouseEvent} from 'react';
 import PropTypes from 'prop-types';
 
 import './App.css';
@@ -11,7 +11,11 @@ function App() {
   
   const gridSizeOption: Number[] = [100, 200, 500, 1000];
 
-  
+  const gridClick = (e: MouseEvent<HTMLElement>) => {
+    const obj = e.target as HTMLElement;
+    console.log(obj.innerText);
+    console.log(typeof (obj.innerText))
+  }
 
   const changeGridSize = (e: ChangeEvent<HTMLSelectElement>) => {
     const newValue: string = e.target.value
@@ -33,7 +37,7 @@ function App() {
         </select>
       </section>
       <section>
-        <GenerateNumberGrid gridSize={gridSize}/>
+        <GenerateNumberGrid gridSize={gridSize} click={gridClick}/>
       </section>
     </div>
   );

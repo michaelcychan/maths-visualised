@@ -34,3 +34,15 @@
 #number-grid-container > div:hover {
   background-color: yellowgreen;
 }
+
+#number-grid-container > div.blue-background {
+  background-color: lightblue;
+}
+
+#number-grid-container > div.yellow-background {
+  background-color: yellow;
+}
+
+#number-grid-container > div.green-background {
+  background-color: lightgreen;
+}
