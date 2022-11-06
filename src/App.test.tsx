@@ -2,8 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders title, pulldown menu, and number grid', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Maths/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/一起學數學/i);
+  expect(titleElement).toBeInTheDocument();
+
+  const  pullDownMenu = screen.getByText(/要多少格/i);
+  expect(pullDownMenu).toBeInTheDocument();
+
+  const grid = document.getElementById("number-grid-container");
+  expect(grid).toBeInTheDocument();
 });

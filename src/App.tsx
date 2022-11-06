@@ -8,8 +8,8 @@ import {GenerateNumberGrid} from './components/generateNumberGrid'
 function App() {
 
   const [gridSize, setGridSize] = useState(100);
-  const arrayNum: Number[] = Array.from(Array(gridSize).keys()).map(x => x+1);
-  const gridSizeOption: Number[] = [100, 200, 500, 10000];
+  
+  const gridSizeOption: Number[] = [100, 200, 500, 1000];
 
   
 
@@ -33,7 +33,7 @@ function App() {
         </select>
       </section>
       <section>
-        <GenerateNumberGrid arrayNum={arrayNum}/>
+        <GenerateNumberGrid gridSize={gridSize}/>
       </section>
     </div>
   );
