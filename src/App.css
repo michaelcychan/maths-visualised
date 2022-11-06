@@ -28,7 +28,8 @@
 #number-grid-container > div {
   background-color: white;
   text-align: center;
-  font-size: 36px;
+  font-size: 25px;
+  border: 1px solid black;
 }
 
 #number-grid-container > div:hover {
@@ -45,4 +46,8 @@
 
 #number-grid-container > div.green-background {
   background-color: lightgreen;
+}
+
+#number-grid-container > div.black-background {
+  background-color: black;
 }
