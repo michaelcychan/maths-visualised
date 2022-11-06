@@ -10,10 +10,17 @@ import {extractInnerTextFromEventTarget} from './components/extractInnerTextFrom
 function App() {
 
   const [gridSize, setGridSize] = useState(100);
+
+  const [selectedNumbers, setSelectedNumbers] = useState(new Array<string>());
   
   const gridClick = (e: MouseEvent<HTMLElement>) => {
     const text = extractInnerTextFromEventTarget(e.target);
     console.log(text);
+    if (selectedNumbers.indexOf(text) == -1) {
+      setSelectedNumbers(prevState => {return [...prevState, text]});
+    } else {
+      setSelectedNumbers(prevState => {return prevState.filter(num => num != text)});
+    }
   }
 
   const changeGridSize = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -31,6 +38,11 @@ function App() {
       <section>
         <GenerateNumberGrid gridSize={gridSize} click={gridClick}/>
       </section>
+      <div>
+        {selectedNumbers.map(numText => {
+          return <span>{numText}</span>;
+        })}
+      </div>
     </div>
   );
 }

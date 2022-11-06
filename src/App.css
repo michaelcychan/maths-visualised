@@ -36,6 +36,10 @@
   background-color: yellowgreen;
 }
 
+#number-grid-container > div.initial-background {
+  background-color: wheat;
+}
+
 #number-grid-container > div.blue-background {
   background-color: lightblue;
 }
