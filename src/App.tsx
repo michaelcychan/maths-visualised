@@ -40,7 +40,7 @@ function App() {
       </section>
       <div>
         {selectedNumbers.map(numText => {
-          return <span>{numText}</span>;
+          return <span>{numText} </span>;
         })}
       </div>
     </div>
