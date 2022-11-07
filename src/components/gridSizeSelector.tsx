@@ -8,7 +8,6 @@ export const GridSizeSelector = (props: any) => {
           {gridSizeOption.map(element => {
             return <option key={element.toString()} value={element.toString()}>{element.toString()}</option>
           })}
-
         </select>
     </div>
 

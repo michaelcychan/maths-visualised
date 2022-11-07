@@ -5,7 +5,7 @@ export const isMultipleOfSelected = (selected: String[], num: number) => {
   }
 
   for (let i = selected.length - 1; i >= 0; i--) {
-    if (selected[i] != "1") {
+    if (selected[i] !== "1") {
       if (selected[i] === num.toString()) {
         match = false
       }
