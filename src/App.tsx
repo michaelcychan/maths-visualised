@@ -15,11 +15,10 @@ function App() {
   
   const gridClick = (e: MouseEvent<HTMLElement>) => {
     const text = extractInnerTextFromEventTarget(e.target);
-    console.log(text);
-    if (selectedNumbers.indexOf(text) == -1) {
+    if (selectedNumbers.indexOf(text) === -1) {
       setSelectedNumbers(prevState => {return [...prevState, text]});
     } else {
-      setSelectedNumbers(prevState => {return prevState.filter(num => num != text)});
+      setSelectedNumbers(prevState => {return prevState.filter(num => num !== text)});
     }
   }
 
@@ -36,9 +35,10 @@ function App() {
       <GridSizeSelector changeGridSize={changeGridSize} />
       <br></br>
       <section>
-        <GenerateNumberGrid gridSize={gridSize} click={gridClick}/>
+        <GenerateNumberGrid gridSize={gridSize} click={gridClick} selected={selectedNumbers}/>
       </section>
       <div>
+        <p>Selected Number (visualised only for Dev):</p>
         {selectedNumbers.map(numText => {
           return <span>{numText} </span>;
         })}

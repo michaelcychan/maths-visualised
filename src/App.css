@@ -32,10 +32,6 @@
   border: 1px solid black;
 }
 
-#number-grid-container > div:hover {
-  background-color: yellowgreen;
-}
-
 #number-grid-container > div.initial-background {
   background-color: wheat;
 }
@@ -54,4 +50,8 @@
 
 #number-grid-container > div.black-background {
   background-color: black;
+}
+
+#number-grid-container > div:hover {
+  background-color: yellowgreen;
 }
