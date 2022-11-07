@@ -6,6 +6,7 @@ import './App.css';
 import {GenerateNumberGrid} from './components/generateNumberGrid'
 import {GridSizeSelector} from './components/gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './components/extractInnerTextFromEventTarget'
+import {sortThisArray} from './components/sortThisArray'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
   const gridClick = (e: MouseEvent<HTMLElement>) => {
     const text = extractInnerTextFromEventTarget(e.target);
     if (selectedNumbers.indexOf(text) === -1) {
-      setSelectedNumbers(prevState => {return [...prevState, text]});
+      setSelectedNumbers(prevState => {return sortThisArray([...prevState, text])});
     } else {
       setSelectedNumbers(prevState => {return prevState.filter(num => num !== text)});
     }
