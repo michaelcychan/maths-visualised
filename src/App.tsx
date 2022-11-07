@@ -35,15 +35,23 @@ function App() {
       </header>
       <GridSizeSelector changeGridSize={changeGridSize} />
       <br></br>
+      <div>
+        <p>質數 (prime number) 的定義是只有兩個因數 (factor)。<br />
+        例如 7 是質數，因為它的因數只有 1 和 7 ﹝共兩個﹞<br />
+        但 8 不是質數，因為它的因數有 1, 2, 4, 8 ﹝共四個﹞<br />
+        1 本身是一個有趣的例外，因為它只有一個因數。
+        </p>
+        <section>請用滑鼠選取以下的數字。選取了的數字的倍數會變黑，想想看，為甚麼有些數字怎樣也不能變黑？<br />
+        {selectedNumbers.map(numText => {
+          return <span>{numText} </span>;
+        })} <br />
+        </section>
+      </div>
+      <br></br>
       <section>
         <GenerateNumberGrid gridSize={gridSize} click={gridClick} selected={selectedNumbers}/>
       </section>
-      <div>
-        <p>Selected Number (visualised only for Dev):</p>
-        {selectedNumbers.map(numText => {
-          return <span>{numText} </span>;
-        })}
-      </div>
+      
     </div>
   );
 }
