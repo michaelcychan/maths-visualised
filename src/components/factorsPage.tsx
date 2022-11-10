@@ -2,10 +2,9 @@ import React, {ChangeEvent, useState, MouseEvent} from 'react';
 
 import '../App.css';
 
-import {GenerateNumberGrid} from './generateNumberGrid'
+import {GenerateFactorNumberGrid} from './generateFactorNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
-import {sortThisArray} from './sortThisArray';
 import {ExplanationFactor} from './explanationFactor';
 
 export const FactorsPage = () => {
@@ -16,14 +15,18 @@ export const FactorsPage = () => {
     setGridSize(Number(newValue))
   }
 
-  const gridClick = () => {
+  const emptySelectedNumbers = "0"
+  const [selectedNumberA, setSelectedNumberA] = useState(emptySelectedNumbers);
+  const [selectedNumberB, setSelectedNumberB] = useState(emptySelectedNumbers);
 
+  const [currentSelection, setCurrentSelection] = useState("A")
+
+  const gridClick = (e: MouseEvent<HTMLElement>) => {
+    const text = extractInnerTextFromEventTarget(e.target);
+    console.log(text);
   }
 
-  const emptySelectedNumbers = new Array<string>()
-  const [selectedNumbers, setSelectedNumbers] = useState(emptySelectedNumbers);
   
-
   return (
     <>
       <GridSizeSelector changeGridSize={changeGridSize} />
@@ -33,7 +36,7 @@ export const FactorsPage = () => {
 
       <br></br>
       <section>
-        <GenerateNumberGrid gridSize={gridSize} click={gridClick} selected={selectedNumbers}/>
+        <GenerateFactorNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>
   )

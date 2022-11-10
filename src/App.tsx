@@ -12,7 +12,6 @@ function App() {
 
   const [showPage, setShowPage] = useState<pageType>(initialPage)
 
-
   const availablePages: String[] = ["質數", "因數", "倍數"]
     
   const buttonClicked = (e: MouseEvent<HTMLElement>) => {

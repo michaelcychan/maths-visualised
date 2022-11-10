@@ -2,7 +2,7 @@ import React, {ChangeEvent, useState, MouseEvent} from 'react';
 
 import '../App.css';
 
-import {GenerateNumberGrid} from './generateNumberGrid'
+import {GeneratePrimeNumberGrid} from './generatePrimeNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {sortThisArray} from './sortThisArray';
@@ -51,7 +51,7 @@ export const PrimeNumberPage = () => {
       </div>
       <br></br>
       <section>
-        <GenerateNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumbers]}/>
+        <GeneratePrimeNumberGrid gridSize={gridSize} click={gridClick} selected={selectedNumbers}/>
       </section>
     </>
   )
