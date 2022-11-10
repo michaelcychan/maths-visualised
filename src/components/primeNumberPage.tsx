@@ -51,7 +51,7 @@ export const PrimeNumberPage = () => {
       </div>
       <br></br>
       <section>
-        <GenerateNumberGrid gridSize={gridSize} click={gridClick} selected={selectedNumbers}/>
+        <GenerateNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumbers]}/>
       </section>
     </>
   )
