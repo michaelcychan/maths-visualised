@@ -4,6 +4,7 @@ import './App.css';
 
 import {PrimeNumberPage} from './components/primeNumberPage';
 import {FactorsPage} from './components/factorsPage';
+import {MultiplePage} from './components/multiplePage';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
       ? <PrimeNumberPage />
       : showPage === "Factors"
         ? <FactorsPage />
-        : <div>倍數 - 未整好</div>
+        : <MultiplePage />
     }
       
     </div>

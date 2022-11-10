@@ -1,4 +1,4 @@
-import {isMultipleOfSelected} from './isMultipleOfSelected'
+import {isMultipleOfSelected} from './isMultipleOfSelectedArray'
 
 export const GeneratePrimeNumberGrid = (props: any) => {
 
