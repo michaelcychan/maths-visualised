@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useState, MouseEvent} from 'react';
 
-
 import '../App.css';
 
 import {GenerateNumberGrid} from './generateNumberGrid'

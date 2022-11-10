@@ -3,6 +3,7 @@ import React, {useState, MouseEvent, Key} from 'react';
 import './App.css';
 
 import {PrimeNumberPage} from './components/primeNumberPage';
+import {FactorsPage} from './components/factorsPage';
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
     {showPage === "Prime"
       ? <PrimeNumberPage />
       : showPage === "Factors"
-        ? <div>因數 - 未整好</div>
+        ? <FactorsPage />
         : <div>倍數 - 未整好</div>
     }
       
