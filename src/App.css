@@ -21,6 +21,10 @@
   color: #61dafb;
 }
 
+.frame {
+  background-color: beige;
+}
+
 .square-root {
   white-space: nowrap;
 }
