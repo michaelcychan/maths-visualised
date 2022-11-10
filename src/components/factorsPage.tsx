@@ -8,22 +8,33 @@ import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget
 import {ExplanationFactor} from './explanationFactor';
 
 export const FactorsPage = () => {
-  const [gridSize, setGridSize] = useState(100);
+  const [gridSize, setGridSize] = useState<number>(100);
 
   const changeGridSize = (e: ChangeEvent<HTMLSelectElement>) => {
     const newValue: string = e.target.value
     setGridSize(Number(newValue))
   }
 
-  const emptySelectedNumbers = "0"
-  const [selectedNumberA, setSelectedNumberA] = useState(emptySelectedNumbers);
-  const [selectedNumberB, setSelectedNumberB] = useState(emptySelectedNumbers);
+  const initialSelected = "0"
+  const [selectedNumberA, setSelectedNumberA] = useState<String>(initialSelected);
+  const [selectedNumberB, setSelectedNumberB] = useState<String>(initialSelected);
 
-  const [currentSelection, setCurrentSelection] = useState("A")
+  type Selection = "A" | "B"
+  const [currentSelection, setCurrentSelection] = useState<Selection>("A")
+
+  const setSelectedAndChangeCurrent = (inputText: String) => {
+    if (currentSelection === "A" && selectedNumberB !== inputText) {
+      setSelectedNumberA(inputText)
+      setCurrentSelection("B")
+    } else if (currentSelection === "B" && selectedNumberA !== inputText){
+      setSelectedNumberB(inputText)
+      setCurrentSelection("A")
+    }
+  }
 
   const gridClick = (e: MouseEvent<HTMLElement>) => {
     const text = extractInnerTextFromEventTarget(e.target);
-    console.log(text);
+    setSelectedAndChangeCurrent(text)
   }
 
   
@@ -36,6 +47,10 @@ export const FactorsPage = () => {
 
       <br></br>
       <section>
+        <section>
+          <div>Selected Number A: {selectedNumberA}</div>
+          <div>Selected Number B: {selectedNumberB}</div>
+        </section>
         <GenerateFactorNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>

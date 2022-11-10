@@ -11,8 +11,11 @@ export const ExplanationFactor = () => {
         16 的因數是 1, 2, 4, 16。由上述可見，4 只能和自己配對，因為16是4的 <span className="frame">平方數</span>。<br />
         「平方」(Square)的意思就是 <span className="frame">n x n</span>，另一個寫法就是 <span className="frame"> n<sup>2</sup> </span>。 <br />
         所以 4 的平方是16。倒過來說，16的平方根 (Square root) 是 4。<br />
-        數學上，我們這樣表達： <br /> <br />
-        <span className="frame"> 4 <sup>2</sup> = 16</span> 或 <span className="frame"> 4 x 4 = 16 </span> 或 <span className="frame"> 16 &divide; 4 = 4 </span> 或 <span className="frame"> <span className="square-root">&radic;<span className="square-root-number">&nbsp;16&nbsp;</span> = 4 </span><br />
+        數學上，我們這樣表達： <br />
+        <span className="frame"> 4 <sup>2</sup> = 16</span>
+        或 <span className="frame"> 4 x 4 = 16 </span>
+        或 <span className="frame"> 16 &divide; 4 = 4 </span>
+        或 <span className="frame"> <span className="square-root">&radic;<span className="square-root-number">&nbsp;16&nbsp;</span> = 4 </span><br />
 </span>
       </p>
       <p>
