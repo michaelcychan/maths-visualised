@@ -6,7 +6,7 @@ import {GenerateNumberGrid} from './generateNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {sortThisArray} from './sortThisArray';
-import {ExplanationPrime} from './explanationPrime';
+import {ExplanationFactor} from './explanationFactor';
 
 export const FactorsPage = () => {
   const [gridSize, setGridSize] = useState(100);
@@ -28,7 +28,7 @@ export const FactorsPage = () => {
     <>
       <GridSizeSelector changeGridSize={changeGridSize} />
       <div>
-
+      <ExplanationFactor />
       </div>
 
       <br></br>

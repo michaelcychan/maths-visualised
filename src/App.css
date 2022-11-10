@@ -13,8 +13,21 @@
   color: white;
 }
 
+.explanation {
+  text-align: left;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.square-root {
+  white-space: nowrap;
+}
+
+.square-root-number{
+  text-decoration: overline;
+  text-decoration-thickness: 1px;
 }
 
 #number-grid-container {
