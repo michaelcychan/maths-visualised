@@ -37,10 +37,10 @@ export const PrimeNumberPage = () => {
       <GridSizeSelector changeGridSize={changeGridSize} />
       <div>
         <ExplanationPrime />
-        <section>請用滑鼠選取以下的數字。選取了的數字的倍數會變黑。<br />
+        <section>請用滑鼠選取以下的數字。選取了的數字的<em>2倍</em>以上的倍數會變黑。<br />
         想想看，為甚麼有些數字怎樣也不能變黑？<br />
         <div>
-        已塗黑這些數字的<em>2倍</em>以上的倍數：<br />
+        已選取的數字：<br />
         {selectedNumbers.map(numText => {
           return <span>{numText} </span>;
         })} <br />

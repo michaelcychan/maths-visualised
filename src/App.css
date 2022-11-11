@@ -13,8 +13,37 @@
   color: white;
 }
 
+.page-selector {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-selector-btn {
+  top: 0;
+  right: 0;
+  display: inline-block;
+  padding: 10px 10px;
+  border: none;
+  background-color: yellowgreen;
+
+  box-shadow: 0 0 6px;
+}
+
+.page-selector-btn:hover {
+  bottom: 3px;
+  right: 3px;
+  box-shadow: 0 0 3px;
+}
+
 .explanation {
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
+  width: 85%;
 }
 
 .App-link {

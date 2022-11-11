@@ -32,9 +32,11 @@ function App() {
       <header className="App-header">
           一起學數學！
       </header>
-      {availablePages.map(page => {
-      return <button key={page as Key} onClick={buttonClicked}>{page}</button>
-    })}
+    <section className="page-selector">
+        {availablePages.map(page => {
+        return <button className="page-selector-btn" key={page as Key} onClick={buttonClicked}>{page}</button>
+      })}
+    </section>
     {showPage === "Prime"
       ? <PrimeNumberPage />
       : showPage === "Factors"
