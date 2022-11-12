@@ -2,11 +2,13 @@ import React, {ChangeEvent, useState, MouseEvent} from 'react';
 
 import '../App.css';
 
+import {Selection} from './typeSelection'
 import {GenerateFactorNumberGrid} from './generateFactorNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {ExplanationFactor} from './explanationFactor';
 import {ResetButton} from './resetButton';
+import {setSelected} from './setSelected';
 
 export const FactorsPage = () => {
   const [gridSize, setGridSize] = useState<number>(100);
@@ -20,29 +22,12 @@ export const FactorsPage = () => {
   const [selectedNumberA, setSelectedNumberA] = useState<String>(initialSelected);
   const [selectedNumberB, setSelectedNumberB] = useState<String>(initialSelected);
 
-  type Selection = "A" | "B"
   const [currentSelection, setCurrentSelection] = useState<Selection>("A")
-
-  const setSelectedAndChangeCurrent = (inputText: String) => {
-    if (currentSelection === "A" && selectedNumberB !== inputText) {
-      setSelectedNumberA(inputText)
-      setCurrentSelection("B")
-    } else if (currentSelection === "B" && selectedNumberA !== inputText){
-      setSelectedNumberB(inputText)
-      setCurrentSelection("A")
-    }
-  }
 
   const gridClick = (e: MouseEvent<HTMLElement>) => {
     const text = extractInnerTextFromEventTarget(e.target);
-    setSelectedAndChangeCurrent(text)
+    setSelected(text, currentSelection, selectedNumberA, setSelectedNumberA, selectedNumberB, setSelectedNumberB, setCurrentSelection)
   }
-
-  const resetButton = () => {
-    setSelectedNumberA(initialSelected);
-    setSelectedNumberB(initialSelected);
-  }
-
   
   return (
     <>
