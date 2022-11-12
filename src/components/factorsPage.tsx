@@ -6,6 +6,7 @@ import {GenerateFactorNumberGrid} from './generateFactorNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {ExplanationFactor} from './explanationFactor';
+import {ResetButton} from './resetButton';
 
 export const FactorsPage = () => {
   const [gridSize, setGridSize] = useState<number>(100);
@@ -37,6 +38,11 @@ export const FactorsPage = () => {
     setSelectedAndChangeCurrent(text)
   }
 
+  const resetButton = () => {
+    setSelectedNumberA(initialSelected);
+    setSelectedNumberB(initialSelected);
+  }
+
   
   return (
     <>
@@ -51,6 +57,7 @@ export const FactorsPage = () => {
           <div>Selected Number A: {selectedNumberA}</div>
           <div>Selected Number B: {selectedNumberB}</div>
         </section>
+        <ResetButton callBack1={setSelectedNumberA} callBack2={setSelectedNumberB} initialValue={initialSelected}/>
         <GenerateFactorNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>

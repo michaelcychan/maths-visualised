@@ -6,6 +6,7 @@ import {GenerateMultipleNumberGrid} from './generateMultipleNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
 import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {ExplanationMultiple} from './explanationMultiple';
+import {ResetButton} from './resetButton';
 
 export const MultiplePage = () => {
   const [gridSize, setGridSize] = useState<number>(100);
@@ -50,6 +51,7 @@ export const MultiplePage = () => {
           <div>Selected Number A: {selectedNumberA}</div>
           <div>Selected Number B: {selectedNumberB}</div>
         </section>
+        <ResetButton callBack1={setSelectedNumberA} callBack2={setSelectedNumberB} initialValue={initialSelected}/>
         <GenerateMultipleNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>
