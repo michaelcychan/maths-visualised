@@ -24,7 +24,6 @@ export const MultiplePage = () => {
 
   const [currentSelection, setCurrentSelection] = useState<Selection>("A")
 
-
   const gridClick = (e: MouseEvent<HTMLElement>) => {
     const text = extractInnerTextFromEventTarget(e.target);
     setSelected(text, currentSelection, selectedNumberA, setSelectedNumberA, selectedNumberB, setSelectedNumberB, setCurrentSelection)
@@ -37,7 +36,7 @@ export const MultiplePage = () => {
       <ExplanationMultiple />
       </div>
 
-      <br></br>
+      <br />
       <section>
         <section>
           <div>Selected Number A: {selectedNumberA}</div>

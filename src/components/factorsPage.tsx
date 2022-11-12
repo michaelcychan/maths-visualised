@@ -36,7 +36,7 @@ export const FactorsPage = () => {
       <ExplanationFactor />
       </div>
 
-      <br></br>
+      <br />
       <section>
         <section>
           <div>Selected Number A: {selectedNumberA}</div>
@@ -47,6 +47,4 @@ export const FactorsPage = () => {
       </section>
     </>
   )
-
-
 }
