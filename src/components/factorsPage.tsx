@@ -18,9 +18,8 @@ export const FactorsPage = () => {
     setGridSize(Number(newValue))
   }
 
-  const initialSelected = "0"
-  const [selectedNumberA, setSelectedNumberA] = useState<String>(initialSelected);
-  const [selectedNumberB, setSelectedNumberB] = useState<String>(initialSelected);
+  const [selectedNumberA, setSelectedNumberA] = useState<String>("0");
+  const [selectedNumberB, setSelectedNumberB] = useState<String>("0");
 
   const [currentSelection, setCurrentSelection] = useState<Selection>("A")
 
@@ -42,7 +41,7 @@ export const FactorsPage = () => {
           <div>Selected Number A: {selectedNumberA}</div>
           <div>Selected Number B: {selectedNumberB}</div>
         </section>
-        <ResetButton callBack1={setSelectedNumberA} callBack2={setSelectedNumberB} initialValue={initialSelected}/>
+        <ResetButton callBack1={setSelectedNumberA} callBack2={setSelectedNumberB} />
         <GenerateFactorNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>

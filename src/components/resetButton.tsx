@@ -1,8 +1,8 @@
 export const ResetButton = (props: any) => {
 
   const resetButton = () => {
-    props.callBack1(props.initialValue)
-    props.callBack2(props.initialValue)
+    props.callBack1("0")
+    props.callBack2("0")
 
   }
 
