@@ -1,7 +1,7 @@
 export const ExplanationFactor = () => {
   return (
     <section className="explanation">
-      <h2>因數</h2>
+      <h2>因數 Factors</h2>
       <p>
         因數 (factor) 是指可以整除另一個整數的數字。<br />
         例如，12 的因數包括 1, 2, 3, 4, 6, 12 。大部分的因數都可以配對，例如：<br />

@@ -17,7 +17,6 @@ function App() {
     
   const buttonClicked = (e: MouseEvent<HTMLElement>) => {
     const button = (e.target as HTMLElement).innerHTML;
-    console.log(button)
     if (button === "質數") {
       setShowPage("Prime")
     } else if (button === "因數") {
@@ -43,7 +42,6 @@ function App() {
         ? <FactorsPage />
         : <MultiplePage />
     }
-      
     </div>
   );
 }

@@ -64,11 +64,12 @@
 }
 
 #number-grid-container {
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   max-width: 80%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(10, 40px);
 }
 
 #number-grid-container > div {
