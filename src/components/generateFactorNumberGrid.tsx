@@ -1,15 +1,20 @@
+import { FC, MouseEventHandler } from 'react';
 import {isFactorOfSelected} from './isFactorOfSelected'
 
-export const GenerateFactorNumberGrid = (props: any) => {
+export const GenerateFactorNumberGrid:FC<{
+  gridSize: number;
+  click: MouseEventHandler;
+  selected: Array<String>;
+}> = ({gridSize, selected, click}) => {
 
   type gridStatus = "OnlyA" | "OnlyB" | "A&B" | "None"
 
-  const arrayNum: number[] = Array.from(Array(props.gridSize).keys()).map(x => x+1);
+  const arrayNum: number[] = Array.from(Array(gridSize).keys()).map(x => x+1);
   return (
     <section id="number-grid-container">
       {arrayNum.map((num: number) => {
-        const matchA: boolean = isFactorOfSelected(props.selected[0], num)
-        const matchB: boolean = isFactorOfSelected(props.selected[1], num)
+        const matchA: boolean = isFactorOfSelected(selected[0], num)
+        const matchB: boolean = isFactorOfSelected(selected[1], num)
         let grid: gridStatus
         
         if (matchA && matchB) {
@@ -22,7 +27,7 @@ export const GenerateFactorNumberGrid = (props: any) => {
           grid = "None"
         }
 
-        return <div id={num.toString()} key={num.toString()} className={grid === "A&B" ? "green-background" : grid === "OnlyA" ? "blue-background" : grid === "OnlyB" ? "yellow-background" : "initial-background"} onClick={props.click}> {num.toString()} </div>
+        return <div id={num.toString()} key={num.toString()} className={grid === "A&B" ? "green-background" : grid === "OnlyA" ? "blue-background" : grid === "OnlyB" ? "yellow-background" : "initial-background"} onClick={click}> {num.toString()} </div>
       })}
     </section>
   );

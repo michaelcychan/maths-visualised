@@ -11,7 +11,7 @@ import {ExplanationPrime} from './explanationPrime';
 export const PrimeNumberPage = () => {
   const [gridSize, setGridSize] = useState(100);
 
-  const emptySelectedNumbers = new Array<string>()
+  const emptySelectedNumbers = new Array<String>()
   const [selectedNumbers, setSelectedNumbers] = useState(emptySelectedNumbers);
   
   const gridClick = (e: MouseEvent<HTMLElement>) => {

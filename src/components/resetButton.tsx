@@ -1,8 +1,13 @@
-export const ResetButton = (props: any) => {
+import { FC } from "react"
+
+export const ResetButton:FC<{
+  callBack1: Function;
+  callBack2: Function;
+}> = ({callBack1, callBack2}) => {
 
   const resetButton = () => {
-    props.callBack1("0")
-    props.callBack2("0")
+    callBack1("0")
+    callBack2("0")
 
   }
 
