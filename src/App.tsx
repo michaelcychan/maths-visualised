@@ -30,17 +30,21 @@ function App() {
       <header className="App-header">
           一起學數學！
       </header>
-    <section className="page-selector">
-        {availablePages.map(page => {
-        return <button className="page-selector-btn" key={page} onClick={() => buttonClicked(page)}>{page}</button>
-      })}
-    </section>
-    {showPage === "Prime"
-      ? <PrimeNumberPage />
-      : showPage === "Factors"
-        ? <FactorsPage />
-        : <MultiplePage />
-    }
+      <section className="page-selector">
+          {availablePages.map(page => {
+          return <button className="page-selector-btn" key={page} onClick={() => buttonClicked(page)}>{page}</button>
+        })}
+      </section>
+      {showPage === "Prime"
+        ? <PrimeNumberPage />
+        : showPage === "Factors"
+          ? <FactorsPage />
+          : <MultiplePage />
+      }
+      <footer>
+        <a href="https://github.com/michaelcychan/maths-visualised" target="_blank" rel="noreferrer">Sourcecode at Github</a>
+      </footer>
+    
     </div>
   );
 }
