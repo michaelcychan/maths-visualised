@@ -1,4 +1,4 @@
-import React, {useState, MouseEvent, Key} from 'react';
+import React, {useState} from 'react';
 
 import './App.css';
 
@@ -13,13 +13,12 @@ function App() {
 
   const [showPage, setShowPage] = useState<pageType>(initialPage)
 
-  const availablePages: String[] = ["質數", "因數", "倍數"]
+  const availablePages: string[] = ["質數", "因數", "倍數"]
     
-  const buttonClicked = (e: MouseEvent<HTMLElement>) => {
-    const button = (e.target as HTMLElement).innerHTML;
-    if (button === "質數") {
+  const buttonClicked = (targetPage: string) => {
+    if (targetPage === "質數") {
       setShowPage("Prime")
-    } else if (button === "因數") {
+    } else if (targetPage === "因數") {
       setShowPage("Factors")
     } else {
       setShowPage("Multiples")
@@ -33,7 +32,7 @@ function App() {
       </header>
     <section className="page-selector">
         {availablePages.map(page => {
-        return <button className="page-selector-btn" key={page as Key} onClick={buttonClicked}>{page}</button>
+        return <button className="page-selector-btn" key={page} onClick={() => buttonClicked(page)}>{page}</button>
       })}
     </section>
     {showPage === "Prime"

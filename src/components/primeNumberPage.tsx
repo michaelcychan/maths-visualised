@@ -1,25 +1,23 @@
-import React, {ChangeEvent, useState, MouseEvent} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 import '../App.css';
 
 import {GeneratePrimeNumberGrid} from './generatePrimeNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
-import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {sortThisArray} from './sortThisArray';
 import {ExplanationPrime} from './explanationPrime';
 
 export const PrimeNumberPage = () => {
   const [gridSize, setGridSize] = useState(100);
 
-  const emptySelectedNumbers = new Array<String>()
-  const [selectedNumbers, setSelectedNumbers] = useState(emptySelectedNumbers);
+  const emptySelectedNumbers = new Array<string>()
+  const [selectedNumbers, setSelectedNumbers] = useState<string[]>(emptySelectedNumbers);
   
-  const gridClick = (e: MouseEvent<HTMLElement>) => {
-    const text = extractInnerTextFromEventTarget(e.target);
-    if (selectedNumbers.indexOf(text) === -1) {
-      setSelectedNumbers(prevState => {return sortThisArray([...prevState, text])});
+  const gridClick = (clickedNum: string) => {
+    if (!selectedNumbers.includes(clickedNum)) {
+      setSelectedNumbers(prevState => {return sortThisArray([...prevState, clickedNum])});
     } else {
-      setSelectedNumbers(prevState => {return prevState.filter(num => num !== text)});
+      setSelectedNumbers(prevState => {return prevState.filter(num => num !== clickedNum)});
     }
   }
 
@@ -42,7 +40,7 @@ export const PrimeNumberPage = () => {
         <div>
         已選取的數字：<br />
         {selectedNumbers.map(numText => {
-          return <span>{numText} </span>;
+          return <span key={numText}>{numText} </span>;
         })} <br />
         </div>
         <div><button onClick={resetSelection}>由頭開始</button></div>
@@ -51,7 +49,7 @@ export const PrimeNumberPage = () => {
       </div>
       <br></br>
       <section>
-        <GeneratePrimeNumberGrid gridSize={gridSize} click={gridClick} selected={selectedNumbers}/>
+        <GeneratePrimeNumberGrid gridSize={gridSize} onClick={gridClick} selected={selectedNumbers}/>
       </section>
     </>
   )

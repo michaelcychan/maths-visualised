@@ -1,11 +1,10 @@
-import React, {ChangeEvent, useState, MouseEvent} from 'react';
+import {ChangeEvent, useState} from 'react';
 
 import '../App.css';
 
 import {Selection} from './typeSelection'
 import {GenerateMultipleNumberGrid} from './generateMultipleNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
-import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {ExplanationMultiple} from './explanationMultiple';
 import {ResetButton} from './resetButton';
 import {setSelected} from './setSelected';
@@ -18,13 +17,12 @@ export const MultiplePage = () => {
     setGridSize(Number(newValue))
   }
 
-  const [selectedNumberA, setSelectedNumberA] = useState<String>("0");
-  const [selectedNumberB, setSelectedNumberB] = useState<String>("0");
+  const [selectedNumberA, setSelectedNumberA] = useState<string>("0");
+  const [selectedNumberB, setSelectedNumberB] = useState<string>("0");
 
   const [currentSelection, setCurrentSelection] = useState<Selection>("A")
 
-  const gridClick = (e: MouseEvent<HTMLElement>) => {
-    const text = extractInnerTextFromEventTarget(e.target);
+  const gridClick = (text: string) => {
     setSelected(text, currentSelection, selectedNumberA, setSelectedNumberA, selectedNumberB, setSelectedNumberB, setCurrentSelection)
   }
 
@@ -42,7 +40,7 @@ export const MultiplePage = () => {
           <div>Selected Number B: {selectedNumberB}</div>
         </section>
         <ResetButton callBack1={setSelectedNumberA} callBack2={setSelectedNumberB} />
-        <GenerateMultipleNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
+        <GenerateMultipleNumberGrid gridSize={gridSize} onClick={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>
   )

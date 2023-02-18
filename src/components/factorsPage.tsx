@@ -1,11 +1,10 @@
-import React, {ChangeEvent, useState, MouseEvent} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 import '../App.css';
 
 import {Selection} from './typeSelection'
 import {GenerateFactorNumberGrid} from './generateFactorNumberGrid'
 import {GridSizeSelector} from './gridSizeSelector';
-import {extractInnerTextFromEventTarget} from './extractInnerTextFromEventTarget';
 import {ExplanationFactor} from './explanationFactor';
 import {ResetButton} from './resetButton';
 import {setSelected} from './setSelected';
@@ -23,8 +22,7 @@ export const FactorsPage = () => {
 
   const [currentSelection, setCurrentSelection] = useState<Selection>("A")
 
-  const gridClick = (e: MouseEvent<HTMLElement>) => {
-    const text = extractInnerTextFromEventTarget(e.target);
+  const gridClick = (text:string) => {
     setSelected(text, currentSelection, selectedNumberA, setSelectedNumberA, selectedNumberB, setSelectedNumberB, setCurrentSelection)
   }
   
@@ -42,7 +40,7 @@ export const FactorsPage = () => {
           <div>Selected Number B: {selectedNumberB}</div>
         </section>
         <ResetButton callBack1={setSelectedNumberA} callBack2={setSelectedNumberB} />
-        <GenerateFactorNumberGrid gridSize={gridSize} click={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
+        <GenerateFactorNumberGrid gridSize={gridSize} onClick={gridClick} selected={[selectedNumberA, selectedNumberB]}/>
       </section>
     </>
   )

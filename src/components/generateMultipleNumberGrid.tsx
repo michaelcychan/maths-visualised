@@ -1,11 +1,11 @@
-import { FC, MouseEventHandler } from 'react';
+import { FC } from 'react';
 import {isMultipleOfSelected} from './isMultipleOfSelected'
 
 export const GenerateMultipleNumberGrid:FC<{
   gridSize: number;
-  click: MouseEventHandler;
-  selected: Array<String>;
-}> = ({gridSize, selected, click}) => {
+  onClick: Function;
+  selected: string[];
+}> = ({gridSize, selected, onClick}) => {
 
   type gridStatus = "OnlyA" | "OnlyB" | "A&B" | "None"
 
@@ -27,7 +27,7 @@ export const GenerateMultipleNumberGrid:FC<{
           grid = "None"
         }
 
-        return <div id={num.toString()} key={num.toString()} className={grid === "A&B" ? "green-background" : grid === "OnlyA" ? "blue-background" : grid === "OnlyB" ? "yellow-background" : "initial-background"} onClick={click}> {num.toString()} </div>
+        return <div id={num.toString()} key={num.toString()} className={grid === "A&B" ? "green-background" : grid === "OnlyA" ? "blue-background" : grid === "OnlyB" ? "yellow-background" : "initial-background"} onClick={() => onClick(num.toString())}> {num.toString()} </div>
       })}
     </section>
   );
